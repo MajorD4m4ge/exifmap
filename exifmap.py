@@ -3,7 +3,7 @@ __author__ = 'tschlein'
 # https://code.google.com/p/pygmaps/
 #TODO Add code to skip HashMark ---> complete
 #Import pygmaps
-#TODO ADd command line arguments --> complete
+#TODO Add command line arguments --> complete
 import sys
 import datetime
 import string
@@ -50,13 +50,14 @@ def getMap(file, path, zoom):
     lineIn = skipHash(f)
 
     c1, c2 = latLong(lineIn)
-    print(c1, c2)
+    if (debug >= 2):
+        print('\tCoordinates: ' + str(c1) + ' - ' + str(c2))
     mymap = pygmaps.maps(c1, c2, zoom)
 
     lineIn = f.readline()
     while lineIn:
         c1, c2 = latLong(lineIn)
-        print(c1, c2)
+        #print(c1, c2)
         mymap.addpoint(c1, c2, "#0000FF")
 
         lineIn = f.readline()
