@@ -4,6 +4,8 @@ __author__ = 'tschlein'
 #TODO Add code to skip HashMark ---> complete
 #Import pygmaps
 #TODO Add command line arguments --> complete
+#TODO Add check if long or lat is missing
+#TODO Add check if columns are incomplete
 import sys
 import datetime
 import string
